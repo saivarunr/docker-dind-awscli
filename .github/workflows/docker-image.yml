@@ -20,6 +20,6 @@ jobs:
     - name: Docker login
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u saivarunr  --password-stdin
     - name: Build the Docker image
-      run: docker build  --tag saivarunr/docker-dind-awscli:latest
+      run: docker build  --tag saivarunr/docker-dind-awscli:latest .
     - name: Push the Docker image
       run: docker push saivarunr/docker-dind-awscli:latest
