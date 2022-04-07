@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Docker login
-      run: echo $DOCKERHUB_PASSWORD | docker login -u saivarunr --password-stdin
+      run: docker login -u saivarunr -p $DOCKERHUB_PASSWORD
     - name: Build the Docker image
       run: docker build  --tag saivarunr/docker-dind-awscli:latest
     - name: Push the Docker image
