@@ -34,6 +34,8 @@ RUN apk --update-cache add \
     && rm -rf /var/cache/apk/* \
     && docker --version \
     && aws --version
-ADD deploy.sh /bin/deploy_image
+ADD deploy_image.sh /bin/deploy_image
+ADD docker_tag.sh /bin/docker_tag
 RUN chmod 777 /bin/deploy_image
+RUN chmod 777 /bin/docker_tag
 CMD /bin/bash
